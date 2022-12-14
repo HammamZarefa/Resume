@@ -42,6 +42,10 @@ class AppServiceProvider extends ServiceProvider
         $viewShare['activeTemplateTrue'] = activeTemplate(true);
         $viewShare['language'] = Language::all();
         $viewShare['pages'] = Page::where('tempname',$activeTemplate)->where('slug','!=','home')->get();
+        $viewShare['about']=getContent('about.content', true);
+        $viewShare['address'] = getContent('address.content', true);
+        $viewShare['skills'] = getContent('skills.element', false, null);
+        $viewShare['socials'] = getContent('footer.element', false, null);
         view()->share($viewShare);
 
 

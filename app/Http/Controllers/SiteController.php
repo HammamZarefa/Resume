@@ -33,8 +33,8 @@ class SiteController extends Controller
 //            $page->save();
 //        }
 //
-        $data['about']=getContent('about.content', true);
-        $data['address'] = getContent('address.content', true);
+//        $data['about']=getContent('about.content', true);
+//        $data['address'] = getContent('address.content', true);
         $data['hero']= getContent('hero.content', true);
         $data['counter_elements']=getContent('counter.element', false, null, true);
         $data['service_content'] = getContent('service.content', true);
@@ -46,8 +46,8 @@ class SiteController extends Controller
         $data['blog_elements'] = getContent('blog.element', false, 8);
         $data['contactinfo']=getContent('contactinfo.element',false,null,true);
         $data['main_skills'] = getContent('mainskills.element', false, null);
-        $data['skills'] = getContent('skills.element', false, null);
-        $data['socials'] = getContent('footer.element', false, null);
+//        $data['skills'] = getContent('skills.element', false, null);
+//        $data['socials'] = getContent('footer.element', false, null);
         $data['page_title'] = 'Home';
 //        $data['prefix'] = session()->get('lang')=='ar' ? '_ar' :'_ar';
 //        $data['sections'] = Page::where('tempname',$this->activeTemplate)->where('slug','home')->firstOrFail();
@@ -239,5 +239,20 @@ class SiteController extends Controller
         $recent_blogs = Frontend::where('id','!=', $id)->where('data_keys', 'blog.element')->latest()->take(5)->get();
         $page_title = $blog->data_values->title;
         return view($this->activeTemplate.'blogshow',compact('blog','page_title', 'recent_blogs'));
+    }
+
+    public function projectdetails($id){
+
+        $project = Project::findorfail($id);
+        $page_title = $project->title;
+        return view($this->activeTemplate.'projectdetails',compact('project','page_title'));
+    }
+
+    public function projects()
+    {
+        $projects=Project::with('projectMainCategory')->get();
+        $projectCategories=ProjectCategory::where('is_main',true)->get();
+        $page_title='Projets';
+        return view($this->activeTemplate.'projects',compact('projects','page_title','projectCategories'));
     }
 }
