@@ -325,7 +325,8 @@ Route::get('blog/{id}/{slug}', 'SiteController@blogDetails')->name('blog.details
 Route::get('extra/{id}/{slug}', 'SiteController@extraDetails')->name('extra.details');
 
 Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholderImage');
-
+Route::get('projectlist', 'SiteController@projects')->name('project.list');
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('blogshow/{id}/{slug}', 'SiteController@blogShow')->name('blog.show');
+Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');

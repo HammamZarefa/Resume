@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'css/plugins/fancybox.min.css')}}">
     <!-- line-awesome webfont -->
     @if(session()->get('lang') =='ar')
-        <link rel="stylesheet" href="{{asset($activeTemplateTrue.'css/style.css-ar')}}">
-    @else
         <link rel="stylesheet" href="{{asset($activeTemplateTrue.'css/style-ar.css')}}">
+    @else
+        <link rel="stylesheet" href="{{asset($activeTemplateTrue.'css/style.css')}}">
     @endif
 <!-- favicon  -->
     <link rel="shortcut icon" href="{{asset($activeTemplateTrue.'img/thumbnail.ico')}}" type="image/x-icon">
@@ -250,43 +250,43 @@
 
         @yield('content')
 
-        {{--<!-- menu bar -->--}}
-            {{--<div class="art-menu-bar">--}}
-                {{--<!-- menu bar frame -->--}}
-                {{--<div class="art-menu-bar-frame">--}}
-                    {{--<!-- current page title -->--}}
-                    {{--<div class="art-current-page"></div>--}}
-                    {{--<!-- current page title end -->--}}
-                    {{--<!-- scroll frame -->--}}
-                    {{--<div class="art-scroll-frame">--}}
-                        {{--<!-- menu -->--}}
-                        {{--<nav id="swupMenu">--}}
-                            {{--<!-- menu list -->--}}
-                            {{--<ul class="main-menu">--}}
-                                {{--<!-- menu item -->--}}
-                                {{--<li class="menu-item current-menu-item"><a href="/home.html">Home</a></li>--}}
-                            {{--</ul>--}}
-                            {{--<!-- menu list end -->--}}
-                        {{--</nav>--}}
-                        {{--<!-- menu end -->--}}
-                        {{--<!-- language change -->--}}
-                        {{--<ul class="art-language-change">--}}
-                            {{--<!-- language item -->--}}
-                            {{--@foreach($language as $lang)--}}
-                                {{--<li @if(session()->get('lang') == $lang->code) class="art-active-lang" @endif>--}}
-                                    {{--<a href="{{route('lang',$lang->code)}}">{{$lang->code}}</a>--}}
-                                {{--</li>--}}
-                            {{--@endforeach--}}
-                        {{--<!-- language item -->--}}
+        <!-- menu bar -->
+           <div class="art-menu-bar">
+                <!-- menu bar frame -->
+                <div class="art-menu-bar-frame">
+                   <!-- current page title -->
+                    <div class="art-current-page"></div
+                    <!-- current page title end -->
+                    <!-- scroll frame -->
+                    <div class="art-scroll-frame">
+                        <!-- menu -->
+                        <nav id="swupMenu">
+                            <!-- menu list -->
+                            <ul class="main-menu">
+                                <!-- menu item -->
+                                <li class="menu-item current-menu-item"><a href="/home.html">Home</a></li>
+                            </ul>
+                            <!-- menu list end -->
+                        </nav>
+                        <!-- menu end -->
+                        <!-- language change -->
+                        <ul class="art-language-change">
+                            <!-- language item -->
+                            @foreach($language as $lang)
+                                <li @if(session()->get('lang') == $lang->code) class="art-active-lang" @endif>
+                                    <a href="{{route('lang',$lang->code)}}">{{$lang->code}}</a>
+                                </li>
+                            @endforeach
+                        <!-- language item -->
                             {{--<li class="art-active-lang"><a href="#.">EN</a></li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- language change end -->--}}
-                    {{--</div>--}}
-                    {{--<!-- scroll frame end -->--}}
-                {{--</div>--}}
-                {{--<!-- menu bar frame -->--}}
-            {{--</div>--}}
-            {{--<!-- menu bar end -->--}}
+                        </ul>
+                        <!-- language change end -->
+                    </div>
+                    <!-- scroll frame end -->
+                </div>
+                <!-- menu bar frame -->
+            </div>
+            <!-- menu bar end -->
         </div>
         <!-- app container end -->
     </div>

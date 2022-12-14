@@ -292,11 +292,21 @@
                                 <!-- slider navigation -->
                                 <div class="art-slider-nav-frame">
                                     <!-- prev -->
-                                    <div class="art-slider-nav art-testi-swiper-prev"><i
-                                                class="fas fa-chevron-left"></i></div>
+                                    <div class="art-slider-nav art-testi-swiper-prev">
+                                    @if(session()->get('lang') =='ar')
+                                    <i class="fas fa-chevron-right"></i>
+                                    @else
+                                    <i class="fas fa-chevron-left"></i>
+                                    @endif
+                                    </div>
                                     <!-- next -->
-                                    <div class="art-slider-nav art-testi-swiper-next"><i
-                                                class="fas fa-chevron-right"></i></div>
+                                    <div class="art-slider-nav art-testi-swiper-next">
+                                    @if(session()->get('lang') =='ar')
+                                    <i class="fas fa-chevron-left"></i>
+                                    @else
+                                    <i class="fas fa-chevron-right"></i>
+                                    @endif
+                                    </div>
                                 </div>
                                 <!-- slider navigation -->
                             </div>
@@ -542,11 +552,21 @@
                                 <!-- slider navigation -->
                                 <div class="art-slider-nav-frame">
                                     <!-- prev -->
-                                    <div class="art-slider-nav art-blog-swiper-prev"><i
-                                                class="fas fa-chevron-left"></i></div>
+                                    <div class="art-slider-nav art-blog-swiper-prev">
+                                    @if(session()->get('lang') =='ar')
+                                    <i class="fas fa-chevron-right"></i>
+                                    @else
+                                    <i class="fas fa-chevron-left"></i>
+                                    @endif
+                                            </div>
                                     <!-- next -->
-                                    <div class="art-slider-nav art-blog-swiper-next"><i
-                                                class="fas fa-chevron-right"></i></div>
+                                    <div class="art-slider-nav art-blog-swiper-next">
+                                    @if(session()->get('lang') =='ar')
+                                    <i class="fas fa-chevron-left"></i>
+                                    @else
+                                    <i class="fas fa-chevron-right"></i> 
+                                    @endif
+                                    </div>
                                 </div>
                                 <!-- slider navigation -->
                             </div>
